@@ -1,7 +1,12 @@
+@font-face {
+    font-family: "Amsterdam Four ttf";
+    src: url(fonts/amsterdam-four-ttf.ttf);
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Old Standard TT', serif;
 }
 html, body {
     width: 100%;
@@ -9,44 +14,190 @@ html, body {
     overflow-y: scroll;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    font-family: 'Old Standard TT', serif;
 }
+a, ul {
+    text-decoration: none;
+    color: black;
+    list-style: none;
+}
+
 .top {
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
+    z-index: 1;
 }
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3vw;
+    z-index: 4;
+    background-color: #fff;
+}
+.header ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 3%;
+    padding-right: 2%;
+}
+.header ul li a {
+    color: black;
+    font-size: 1vw;
+    text-transform: uppercase;
+}
+
 .top-img {
+    background-color: #fff6ea;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    z-index: 2;
 }
 .top-img img {
     width: 100%;
     height: auto;
     animation: fading 8s infinite ease-in-out;
+    z-index: 1;
 }
 @keyframes fading { 
     0% {opacity:0}
-    50% {opacity:1}
+    10% {opacity:1}
+    90% {opacity: 1}
     100% {opacity:0}
+}
+
+.top-img-dummy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    z-index: 3;
 }
 
 .top-title {
     position: absolute;
-    bottom: 10%;
-    left: 5%;
+    bottom: 7%;
+    left: 2%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     color: #fff;
+    z-index: 2;
+    gap: 0;
+}
+.top-title h1 {
+    font-family: "Amsterdam Four ttf";
+    font-size: 6vw;
+    font-weight: 100;
 }
 .top-title p {
-    font-family: 'Old Standard TT', serif;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 67%;
+    font-size: 2vw;
+    text-transform: uppercase;
+}
+
+
+/* About Me */
+.about-me {
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+/* left */
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1%;
+}
+.name p {
+    font-family: "Amsterdam Four ttf";
+    color: #815b43;
     font-size: 5vw;
+}
+.brief-profiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+}
+.brief-profile ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #5b2d29;
+}
+.brief-profile.sm {
+    font-size: 1.3vw;
+}
+.brief-profile.lg {
+    font-size: 1.6vw;
+}
+.me-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.me-nav a {
+    display:block;
+    width: 150px;
+    height:50px;
+    border-radius:25px;
+    margin:1rem 0;
+    font-size:1.2rem;
+    outline:none;
+    border:none;
+    background-color:#d3b8a2;
+    cursor:pointer;
+    text-transform:uppercase;
+    color:#fff;
+    font-family:'Poppins', sans-serif;
+    transition: .5s;
+}
+
+
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.img-frame {
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+}
+.img-frame img {
+    width: 100%;
+    height: auto;
 }
